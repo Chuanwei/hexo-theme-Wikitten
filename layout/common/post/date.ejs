@@ -6,3 +6,11 @@
         </a>
     </div>
 <% } %>
+<% if (post.updated) { %>
+    <div class="<%= class_name %>">
+        <i class="fa fa-calendar"></i>
+        <a href="<%- url_for(post.path) %>">
+            <time datetime="<%= date_xml(post.updated) %>" itemprop="datePublished"><%= date(post.updated, date_format) %></time>
+        </a>
+    </div>
+<% } %>
